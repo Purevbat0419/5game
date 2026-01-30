@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <title>Хайч, Чулуу, Даавуу</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>✂️🪨📄 Хайч, Чулуу, Даавуу</h1>
+    <p>Компьютертэй тоглоорой!</p>
+    {% if message %}
+    <p class="message">Таны сонголт: {{ user_choice }}</p>
+    <p class="message">Компьютерийн сонголт: {{ computer_choice }}</p>
+    <p class="message">{{ message }}</p>
+    {% endif %}
+    <form method="post">
+        <label for="choice">Сонголт:</label>
+        <select id="choice" name="choice" required>
+            <option value="Хайч">✂️ Хайч</option>
+            <option value="Чулуу">🪨 Чулуу</option>
+            <option value="Даавуу">📄 Даавуу</option>
+        </select>
+        <button type="submit">Тоглох</button>
+    </form>
+    <a href="/">🏠 Буцах</a>
+</body>
+</html>

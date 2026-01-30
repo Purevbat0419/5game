@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <title>Зураг таах</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>🖼️ Зураг таах</h1>
+    <p>Тодорхойлолт: <strong>{{ description }}</strong></p>
+    {% if message %}
+    <p class="message">{{ message }}</p>
+    {% endif %}
+    <form method="post">
+        <label for="guess">Таах амьтан:</label>
+        <input type="text" id="guess" name="guess" required>
+        <button type="submit">Таах</button>
+    </form>
+    <a href="/">🏠 Буцах</a>
+</body>
+</html>

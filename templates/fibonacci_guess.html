@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <title>Фибоначчигийн таавар</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>🔢 Фибоначчигийн дараагийн тоог таана уу</h1>
+    <p>Дараалал: <strong>{{ seq|join(', ') }}</strong></p>
+    {% if message %}
+    <p class="message">{{ message }}</p>
+    {% endif %}
+    <form method="post">
+        <label for="guess">Дараагийн тоо:</label>
+        <input type="number" id="guess" name="guess" required>
+        <button type="submit">Таах</button>
+    </form>
+    <a href="/">🏠 Буцах</a>
+</body>
+</html>
